@@ -43,8 +43,9 @@ npm install -g @angular/cli
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/<organization>/<repository-name>.git
-cd <repository-name>
+git clone https://github.com/HavyakaX07/magnum_minds-ui
+.git
+cd magnum_minds-ui
 ```
 
 ### Install Dependencies
