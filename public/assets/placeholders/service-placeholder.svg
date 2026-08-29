@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#19476D"/>
+      <stop offset="1" stop-color="#0A7D9B"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect x="90" y="120" width="1020" height="560" rx="18" fill="white" fill-opacity="0.12"/>
+  <circle cx="260" cy="270" r="70" fill="white" fill-opacity="0.3"/>
+  <rect x="370" y="215" width="420" height="30" rx="8" fill="white" fill-opacity="0.35"/>
+  <rect x="370" y="270" width="520" height="24" rx="8" fill="white" fill-opacity="0.24"/>
+  <rect x="370" y="320" width="360" height="24" rx="8" fill="white" fill-opacity="0.24"/>
+  <text x="100" y="720" fill="white" fill-opacity="0.85" font-size="46" font-family="Segoe UI, Arial, sans-serif" font-weight="700">MAGNUM MINDS SERVICE</text>
+</svg>

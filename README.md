@@ -1,148 +1,118 @@
-# Mangum Minds UI
+# Magnum Minds UI Dashboard
 
-This repository contains the frontend user interface (UI) for the Mangum Minds projects. The application is built using Angular and provides a modern, responsive, and scalable user experience.
+Frontend dashboard for Magnum Minds, built with Angular. This project showcases:
 
-## Overview
+- Services we provide
+- Achievements and business outcomes
+- Clients we support
+- Projects and case studies delivered
 
-The Mangum Minds UI application serves as the frontend layer of the platform, communicating with backend APIs to deliver business functionality through an intuitive web interface.
+The codebase is structured for long-term maintainability and ready for backend API integration.
 
-### Key Features
+## Tech Stack
 
-- Angular-based frontend application
-- Responsive and mobile-friendly design
-- Component-driven architecture
-- Environment-based configuration
-- REST API integration
-- Scalable and maintainable code structure
-
-## Technology Stack
-
-- Angular
+- Angular 22 (standalone architecture)
 - TypeScript
-- HTML5
-- CSS3 / SCSS
+- SCSS
 - RxJS
-- Angular Material (if applicable)
 
 ## Prerequisites
 
-Before running the application, ensure the following tools are installed:
+- Node.js 20+
+- npm 10+
 
-- Node.js (v18 or later recommended)
-- npm (comes with Node.js)
-- Angular CLI
+## Local Development
 
-Install Angular CLI globally:
-
-```bash
-npm install -g @angular/cli
-```
-
-## Getting Started
-
-### Clone the Repository
-
-```bash
-git clone https://github.com/HavyakaX07/magnum_minds-ui
-.git
-cd magnum_minds-ui
-```
-
-### Install Dependencies
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-### Run the Application
+Run development server:
 
 ```bash
-ng serve
+npm start
 ```
 
-Navigate to:
+Open:
 
 ```text
 http://localhost:4200
 ```
 
-The application will automatically reload when source files are modified.
-
-## Build
-
-To create a production build:
+## Production Build
 
 ```bash
-ng build --configuration production
+npm run build
 ```
 
-Build artifacts will be generated under the `dist/` directory.
+Build output is generated under:
+
+```text
+dist/magnum-minds-ui-app/browser
+```
 
 ## Project Structure
 
 ```text
 src/
 ├── app/
-│   ├── components/
-│   ├── services/
-│   ├── models/
-│   ├── pages/
-│   └── shared/
-├── assets/
+│   ├── core/
+│   │   ├── config/              # App-wide config tokens (API base url, etc.)
+│   │   ├── models/              # Strongly typed interfaces
+│   │   └── services/            # API and content services
+│   ├── features/
+│   │   └── dashboard/
+│   │       └── pages/
+│   │           └── dashboard-page/
+│   ├── app.config.ts            # Providers (router, HttpClient)
+│   ├── app.routes.ts            # Route mapping
+│   └── app.ts                   # Root app shell
 ├── environments/
-└── styles/
+│   ├── environment.ts
+│   └── environment.production.ts
+├── index.html
+└── styles.scss
+
+staticwebapp.config.json         # Azure Static Web Apps routing and headers
 ```
 
-## Environment Configuration
+## Backend Integration Ready
 
-Update the environment files located in:
+This UI already includes:
 
-```text
-src/environments/
-```
+- Environment-based API URL configuration in `src/environments`
+- Reusable API wrapper service in `src/app/core/services/api.service.ts`
+- Injection-token-based API config in `src/app/core/config/api.config.ts`
 
-Example:
+You can now plug in backend endpoints by creating feature-specific data services that call `ApiService`.
 
-```typescript
-export const environment = {
-  production: false,
-  apiUrl: 'https://api.example.com'
-};
-```
+## Azure Static Web App Deployment
 
-## Deployment
+This repository is prepared for Azure Static Web Apps:
 
-The application is configured to be deployed through GitHub Actions and Azure services.
+- SPA routing fallback configured in `staticwebapp.config.json`
+- Security headers included for baseline hardening
+- Production API base URL defaults to `/api` for SWA + Functions integration pattern
 
-Typical deployment flow:
+Typical deployment pipeline:
 
 ```text
 GitHub Repository
-        ↓
+	↓
 GitHub Actions
-        ↓
-Azure Static Web Apps / Azure App Service
+	↓
+Azure Static Web Apps
 ```
 
-## Development Guidelines
+## Notes on Content and Assets
 
-- Follow Angular style guidelines.
-- Use reusable components whenever possible.
-- Keep services focused on API and business logic.
-- Maintain clean and readable code.
-- Write meaningful commit messages.
+- Dashboard images currently use publicly accessible stock image URLs for quick prototyping.
+- Replace with licensed brand-approved assets before production release.
 
-## Contributing
+## Next Extension Points
 
-1. Create a feature branch.
-2. Implement your changes.
-3. Test the application.
-4. Submit a Pull Request for review.
-
-## License
-
-This project is proprietary and intended for use within Mangum Minds projects unless stated otherwise.
-
-## Contact
-
-For questions, issues, or enhancement requests, please contact the project maintainers.
+- Add feature modules/pages for detailed client and project views
+- Replace static company content service with backend-driven data
+- Add authentication/authorization for internal dashboards

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200" fill="none">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1600" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EAF5F8"/>
+      <stop offset="1" stop-color="#F3EEE4"/>
+    </linearGradient>
+    <radialGradient id="g2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(300 240) rotate(24) scale(420 280)">
+      <stop stop-color="#8FD2C8" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#8FD2C8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g3" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1280 180) rotate(20) scale(360 260)">
+      <stop stop-color="#F3C47D" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#F3C47D" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" stroke="#0F385B" stroke-opacity="0.06"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="1200" fill="url(#g1)"/>
+  <rect width="1600" height="1200" fill="url(#grid)"/>
+  <ellipse cx="300" cy="240" rx="420" ry="280" fill="url(#g2)"/>
+  <ellipse cx="1280" cy="180" rx="360" ry="260" fill="url(#g3)"/>
+</svg>

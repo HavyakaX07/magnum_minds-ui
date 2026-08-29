@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F3554"/>
+      <stop offset="1" stop-color="#25567A"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect x="120" y="110" width="960" height="580" rx="16" fill="white" fill-opacity="0.1"/>
+  <rect x="190" y="190" width="820" height="46" rx="8" fill="white" fill-opacity="0.35"/>
+  <rect x="190" y="276" width="700" height="32" rx="8" fill="white" fill-opacity="0.24"/>
+  <rect x="190" y="334" width="620" height="32" rx="8" fill="white" fill-opacity="0.24"/>
+  <rect x="190" y="392" width="760" height="32" rx="8" fill="white" fill-opacity="0.24"/>
+  <text x="120" y="742" fill="white" fill-opacity="0.88" font-size="44" font-family="Segoe UI, Arial, sans-serif" font-weight="700">DELIVERED PROJECT SNAPSHOT</text>
+</svg>

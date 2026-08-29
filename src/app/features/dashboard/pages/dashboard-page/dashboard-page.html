@@ -1,0 +1,115 @@
+<div class="page-shell">
+  <header class="hero" aria-labelledby="hero-title">
+    <div class="hero-inner">
+      <nav class="top-nav" aria-label="Primary navigation">
+        <a class="brand" href="#">MAGNUM MINDS</a>
+        <ul class="menu">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+          <li><a href="#clients">Clients</a></li>
+          <li><a href="#projects">Projects</a></li>
+        </ul>
+      </nav>
+
+      <div class="hero-content">
+        <p class="eyebrow">Enterprise AI Engineering</p>
+        <h1 id="hero-title">{{ profile.heroTitle }}</h1>
+        <p class="subtitle">{{ profile.heroSubtitle }}</p>
+        <a class="cta" href="#projects">Explore Our Work</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="content-shell">
+    <section id="services" aria-labelledby="services-title" class="section">
+      <div class="section-heading">
+        <p class="kicker">What We Provide</p>
+        <h2 id="services-title">AI Services</h2>
+      </div>
+      <div class="services-grid">
+        @for (service of profile.services; track service.id) {
+          <article class="service-card">
+            <img
+              [src]="service.imageUrl"
+              [alt]="service.title"
+              loading="lazy"
+              (error)="setFallbackImage($event, 'service')"
+            />
+            <div class="service-body">
+              <h3>{{ service.title }}</h3>
+              <p>{{ service.description }}</p>
+              <ul>
+                @for (highlight of service.highlights; track highlight) {
+                  <li>{{ highlight }}</li>
+                }
+              </ul>
+            </div>
+          </article>
+        }
+      </div>
+    </section>
+
+    <section id="achievements" aria-labelledby="achievements-title" class="section">
+      <div class="section-heading">
+        <p class="kicker">Proof of Delivery</p>
+        <h2 id="achievements-title">Achievements</h2>
+      </div>
+      <div class="achievement-grid">
+        @for (item of profile.achievements; track item.label) {
+          <article class="achievement-card">
+            <p class="metric">{{ item.metric }}</p>
+            <h3>{{ item.label }}</h3>
+            <p>{{ item.context }}</p>
+          </article>
+        }
+      </div>
+    </section>
+
+    <section id="clients" aria-labelledby="clients-title" class="section">
+      <div class="section-heading">
+        <p class="kicker">Trusted By</p>
+        <h2 id="clients-title">Our Clients</h2>
+      </div>
+      <div class="clients-grid" role="list">
+        @for (client of profile.clients; track client.name) {
+          <article class="client-card" role="listitem">
+            <img
+              [src]="client.logoUrl"
+              [alt]="client.name"
+              loading="lazy"
+              (error)="setFallbackImage($event, 'client')"
+            />
+            <h3>{{ client.name }}</h3>
+            <p>{{ client.sector }}</p>
+          </article>
+        }
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-title" class="section">
+      <div class="section-heading">
+        <p class="kicker">Case Studies</p>
+        <h2 id="projects-title">Projects We Delivered</h2>
+      </div>
+      <div class="projects-stack">
+        @for (project of profile.projects; track project.title) {
+          <article class="project-card">
+            <img
+              [src]="project.imageUrl"
+              [alt]="project.title"
+              loading="lazy"
+              (error)="setFallbackImage($event, 'project')"
+            />
+            <div class="project-content">
+              <p class="client-name">{{ project.client }}</p>
+              <h3>{{ project.title }}</h3>
+              <p><strong>Challenge:</strong> {{ project.challenge }}</p>
+              <p><strong>Solution:</strong> {{ project.solution }}</p>
+              <p><strong>Impact:</strong> {{ project.impact }}</p>
+            </div>
+          </article>
+        }
+      </div>
+    </section>
+  </main>
+</div>

@@ -1,0 +1,33 @@
+:root {
+  --mm-bg: #f6f9fb;
+  --mm-text: #113451;
+  --mm-muted: #4d6a82;
+  --mm-font-body: 'Segoe UI Variable', 'Trebuchet MS', Tahoma, sans-serif;
+  --mm-font-heading: 'Bahnschrift', 'Arial Narrow', 'Franklin Gothic Medium', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--mm-font-body);
+  color: var(--mm-text);
+  background:
+    linear-gradient(rgba(5, 16, 39, 0.68), rgba(8, 20, 46, 0.62)),
+    url('/assets/backgrounds/magnum-wave-bg.jpeg') center/cover fixed no-repeat,
+    radial-gradient(circle at 8% 15%, rgba(110, 200, 192, 0.12), transparent 30%),
+    radial-gradient(circle at 86% 30%, rgba(243, 188, 109, 0.1), transparent 32%),
+    var(--mm-bg);
+}
+
+a {
+  color: inherit;
+}
