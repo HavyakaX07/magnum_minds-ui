@@ -29,6 +29,9 @@ jobs:
       - name: Build Angular App
         run: npm run build
 
+      - name: Copy SWA Routing Config
+        run: cp staticwebapp.config.json dist/magnum-minds-ui-app/browser/staticwebapp.config.json
+
       - name: Deploy to Azure Static Web Apps
         id: deploy
         uses: Azure/static-web-apps-deploy@v1
@@ -36,9 +39,10 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: upload
-          app_location: "/"
+          app_location: "dist/magnum-minds-ui-app/browser"
           api_location: ""
-          output_location: "dist/magnum-minds-ui-app/browser"
+          output_location: ""
+          skip_app_build: true
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
