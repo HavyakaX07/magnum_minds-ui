@@ -2,7 +2,7 @@
 
 Frontend dashboard for Magnum Minds, built with Angular. This project showcases:
 
-- Services we provide
+- Services we provide.
 - Achievements and business outcomes
 - Clients we support
 - Projects and case studies delivered
